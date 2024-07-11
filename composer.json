@@ -1,0 +1,40 @@
+{
+  "name": "andrew-gos/double-gis",
+  "description": "Advanced strictly typed library for 2Gis Api",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0",
+  "autoload": {
+    "psr-4": {
+      "AndrewGos\\DoubleGis\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AndrewGos\\DoubleGis\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Andrey Gostev",
+      "email": "Gostev71@outlook.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": ">=8",
+    "ext-ctype": "*",
+    "andrew-gos/class-builder": ">=1.0",
+    "psr/container": "^2.0",
+    "psr/http-client": "^1.0",
+    "psr/http-factory": "^1.0",
+    "psr/http-message": "^2.0",
+    "psr/http-server-handler": "^1.0",
+    "psr/http-server-middleware": "^1.0",
+    "psr/log": "^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.2"
+  }
+}
