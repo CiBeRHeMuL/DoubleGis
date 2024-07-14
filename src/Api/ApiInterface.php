@@ -2,6 +2,7 @@
 
 namespace AndrewGos\DoubleGis\Api;
 
+use AndrewGos\DoubleGis\Request\ItemsRequest;
 use AndrewGos\DoubleGis\Request\MarkersRequest;
 use AndrewGos\DoubleGis\Request\RegionGetRequest;
 use AndrewGos\DoubleGis\Request\RegionListRequest;
@@ -9,6 +10,7 @@ use AndrewGos\DoubleGis\Request\RegionSearchRequest;
 use AndrewGos\DoubleGis\Request\RubricGetRequest;
 use AndrewGos\DoubleGis\Request\RubricListRequest;
 use AndrewGos\DoubleGis\Request\RubricSearchRequest;
+use AndrewGos\DoubleGis\Response\ItemsResponse;
 use AndrewGos\DoubleGis\Response\MarkersResponse;
 use AndrewGos\DoubleGis\Response\RegionResponse;
 use AndrewGos\DoubleGis\Response\RubricResponse;
@@ -92,9 +94,19 @@ interface ApiInterface
      *
      * @return RegionResponse
      *
-     * @see https://docs.2gis.com/ru/api/search/regions/reference/2.0/region/list
+     * @link https://docs.2gis.com/ru/api/search/regions/reference/2.0/region/list
      */
     public function regionList(RegionListRequest $request): RegionResponse;
+
+    /**
+     * !!! Now this method working only for AdmDiv items!!!
+     * @param ItemsRequest $request
+     *
+     * @return ItemsResponse
+     *
+     * @linl https://docs.2gis.com/ru/api/search/places/reference/3.0/items
+     */
+    public function items(ItemsRequest $request): ItemsResponse;
 
     public function getLastResponseRaw(): array|null;
 }

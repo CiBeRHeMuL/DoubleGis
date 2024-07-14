@@ -8,6 +8,7 @@ use AndrewGos\DoubleGis\Entity\MetaError;
 use AndrewGos\DoubleGis\Enum\HttpStatusCodeEnum;
 use AndrewGos\DoubleGis\Helper\HArray;
 use AndrewGos\DoubleGis\Http\Factory\RequestFactoryInterface;
+use AndrewGos\DoubleGis\Request\ItemsRequest;
 use AndrewGos\DoubleGis\Request\MarkersRequest;
 use AndrewGos\DoubleGis\Request\RegionGetRequest;
 use AndrewGos\DoubleGis\Request\RegionListRequest;
@@ -15,6 +16,7 @@ use AndrewGos\DoubleGis\Request\RegionSearchRequest;
 use AndrewGos\DoubleGis\Request\RubricGetRequest;
 use AndrewGos\DoubleGis\Request\RubricListRequest;
 use AndrewGos\DoubleGis\Request\RubricSearchRequest;
+use AndrewGos\DoubleGis\Response\ItemsResponse;
 use AndrewGos\DoubleGis\Response\MarkersResponse;
 use AndrewGos\DoubleGis\Response\RegionResponse;
 use AndrewGos\DoubleGis\Response\RubricResponse;
@@ -170,6 +172,23 @@ class Api implements ApiInterface
         } catch (Throwable $e) {
             $this->logger->error($e);
             return new RegionResponse($this->errorMeta($e));
+        }
+    }
+
+    public function items(ItemsRequest $request): ItemsResponse
+    {
+        try {
+            $result = $this->send(
+                '/3.0/items',
+                $request->toArray(),
+            );
+            return $this->classBuilder->build(
+                ItemsResponse::class,
+                $result,
+            );
+        } catch (Throwable $e) {
+            $this->logger->error($e);
+            return new ItemsResponse($this->errorMeta($e));
         }
     }
 
