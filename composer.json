@@ -3,7 +3,7 @@
   "description": "Advanced strictly typed library for 2Gis Api",
   "type": "library",
   "license": "MIT",
-  "version": "1.1",
+  "version": "1.1.1",
   "autoload": {
     "psr-4": {
       "AndrewGos\\DoubleGis\\": "src/"

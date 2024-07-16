@@ -1,6 +1,6 @@
 # 2Gis API Library
 
-**Version 1.1**
+**Version 1.1.1**
 
 ## Overview
 

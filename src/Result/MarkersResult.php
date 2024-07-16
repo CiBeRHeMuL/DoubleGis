@@ -16,4 +16,14 @@ readonly class MarkersResult
         #[ArrayType(AbstractMarker::class)] protected array $items,
     ) {
     }
+
+    public function getTotal(): int
+    {
+        return $this->total;
+    }
+
+    public function getItems(): array
+    {
+        return $this->items;
+    }
 }

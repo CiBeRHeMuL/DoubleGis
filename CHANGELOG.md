@@ -1,5 +1,10 @@
 # Changelog of Double Gis library
 
+## Version 1.1.1
+
+### General
++ Small fixes
+
 ## Version 1.1
 
 ### General

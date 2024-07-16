@@ -21,4 +21,24 @@ readonly class ItemsResult
         #[ArrayType(ContextRubric::class)] protected array|null $context_rubrics = null,
     ) {
     }
+
+    public function getTotal(): int
+    {
+        return $this->total;
+    }
+
+    public function getItems(): array
+    {
+        return $this->items;
+    }
+
+    public function getSearchAttributes(): SearchAttributes|null
+    {
+        return $this->search_attributes;
+    }
+
+    public function getContextRubrics(): array|null
+    {
+        return $this->context_rubrics;
+    }
 }
